@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.time.LocalDateTime;
 import java.util.Arrays;
 
 public class Client extends Thread {
@@ -61,7 +60,7 @@ public class Client extends Thread {
 		msg_digitada = teclado.readLine();
 		if(Arrays.asList("1", "2", "3").contains(msg_digitada)) {
 			// Cria o socket de acesso ao server hostname na porta 8567
-			Socket cliente = new Socket("localhost", 8567);
+			Socket cliente = new Socket("192.168.0.11", 8567);
 
 			// Cria os strems de saída com o servidor
 			DataOutputStream saida_servidor = new DataOutputStream(cliente.getOutputStream());
